@@ -1,0 +1,38 @@
+#include <stdio.h>
+
+int main(void) {
+    int  intero1;
+    int  intero2;
+    int  sum;
+    char   name[20];
+
+    // 1) Lettura di un intero
+    printf("Inserisci un numero intero: ");
+    if (scanf("%d", &intero1) != 1) {
+        printf("Input non valido.\n");
+        return 1;
+    }
+
+    // 2) Lettura di un secondo intero
+    printf("Inserisci un nuovo numero intero: ");
+    if (scanf("%d", &intero2) != 1) {
+        printf("Input non valido.\n");
+        return 1;
+    }
+    sum= intero1+intero2;
+     printf("La somma di %d e %d è %d\n",intero1,intero2,sum);
+
+    // 3) Lettura di una stringa con limite
+    printf("Inserisci il tuo nome: ");
+    if (scanf("%19s", name) != 1) {  // %19s per evitare overflow
+        printf("Input non valido per il nome.\n");
+        return 1;
+    }
+
+    // 4) Stampa dei dati letti
+    printf("\nDati inseriti:\n");
+    printf("Nome  : %s\n", name);
+    printf("La somma è : %.d\n",sum );
+
+    return 0;
+}
